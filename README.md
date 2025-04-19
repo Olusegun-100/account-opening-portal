@@ -22,4 +22,5 @@ A full-stack web application that allows users to open accounts online with secu
 ---
 
 ## 📸 Screenshots
+Screenshots are available in Screenshot folder
 
