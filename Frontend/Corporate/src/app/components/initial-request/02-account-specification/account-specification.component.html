@@ -1,0 +1,517 @@
+
+<div class="d-flex">
+    <div class="left-side col-lg-6 col-md-12 col-sm-12 p-3">
+
+        <div class="logo">
+            <img [src]="imageLogo" alt="itmb-logo" class="form-logo">
+        </div>
+
+        <div class="text-primary-emphasis col-12 mb-5">
+            <h4 class="display-6"><strong>Get Started</strong></h4>
+            <h6>Kindly provide correct information in the fields below</h6>
+        </div>
+        
+
+        
+        <!-- Start of Employment Details -->
+        <div class="text-primary-emphasis col-12 mb-3 mt-5">
+            <h4><strong>Company Details</strong></h4>
+        </div>        
+        <div class="col-lg-12">
+            <div class="row">
+                
+                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Company / Business Name</mat-label>
+                        <input 
+                            type="text" matInput 
+                            autocomplete="off"
+                            name="companyname" 
+                            [(ngModel)]="customerInfo.companyname"
+                        />
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>RC Number</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="customerInfo.rcNumber" 
+                            name="rcNumber"
+                        />
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Tax Identification Number (TIN)</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="customerInfo.tin" 
+                            name="tin"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">            
+                    <mat-form-field
+                    class="full-width"
+                    appearance="fill">
+                        <mat-label>
+                            Date of Registration
+                        </mat-label>
+                        <input 
+                            [(ngModel)]="customerInfo.dateOfRegistration" 
+                            autocomplete="off"
+                            name="dateOfRegistration" 
+                            matInput [matDatepicker]="dateOfRegistration"
+                        />
+                        <mat-datepicker-toggle matSuffix [for]="dateOfRegistration"></mat-datepicker-toggle>
+                        <mat-datepicker #dateOfRegistration></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Jurisdiction of Registration</mat-label>
+                        <input 
+                            type="text" matInput
+                            autocomplete="off"
+                            name="jurisdictionOfRegistration"
+                            [(ngModel)]="customerInfo.jurisdictionOfRegistration" 
+                        />
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Business Type</mat-label>
+                        <mat-select 
+                            name="selected_businessType"
+                            [(ngModel)]="customerInfo.selected_businessType">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option       
+                                *ngFor="let info of businessTypeList"
+                                [value]="info.code">
+                                    {{ info.decription }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Sector</mat-label>
+                        <mat-select 
+                            name="selected_sector"
+                            [(ngModel)]="customerInfo.selected_sector">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option       
+                                *ngFor="let info of sectorList"
+                                [value]="info.code">
+                                    {{ info.description }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Operating Address 1</mat-label>
+                        <input 
+                            type="text" matInput
+                            autocomplete="off"
+                            name="operatingAddress1"
+                            [(ngModel)]="customerInfo.operatingAddress1"
+                        />
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Operating Address 2</mat-label>
+                        <input 
+                            type="text" matInput
+                            autocomplete="off"
+                            name="operatingAddress2"
+                            [(ngModel)]="customerInfo.operatingAddress2"
+                        />
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Email Address</mat-label>
+                        <input 
+                            type="text" matInput
+                            autocomplete="off"
+                            name="phonenumber1"
+                            name="emailAddress"
+                            [(ngModel)]="customerInfo.emailAddress"
+                        />
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Corporate Business Address/
+                            Registered office (if different from above)</mat-label>
+                        <input 
+                            type="text" matInput
+                            autocomplete="off"
+                            name="businessAddress"
+                            [(ngModel)]="customerInfo.businessAddress"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <!-- state and lga -->
+
+                
+                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">State</mat-label>
+                        <mat-select 
+                            (selectionChange)="getLga()"                         
+                            name="selected_state"
+                            [(ngModel)]="customerInfo.selected_state">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option                                
+                                *ngFor="let info of stateList" 
+                                [value]="info.stateCode">
+                                    {{ info.stateName }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">L.G.A.</mat-label>
+                        <mat-select 
+                            name="selected_lga"
+                            [(ngModel)]="customerInfo.selected_lga">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option                                
+                            *ngFor="let info of lgaList" [value]="info.lgaCode">
+                            {{ info.lgaName }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-12 col-md-12 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>CRM No / Borrower's Code (where applicable)</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            name="crm"
+                            [(ngModel)]="customerInfo.crm"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Special Control Unit against Money laundering (SCUML) Reg. No.
+                            (where applicable)</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            name="scuml"
+                            [(ngModel)]="customerInfo.scuml"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Website (if any)</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            name="website"
+                            [(ngModel)]="customerInfo.website"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Phone Number</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            name="phonenumber"
+                            [(ngModel)]="customerInfo.phonenumber"
+                        />
+                    </mat-form-field>
+                </div>
+                
+            </div>
+        </div>        
+        <!-- End of Employment Details -->
+
+        
+        <!-- Start of ESTIMATED ANNUAL TURN OVER -->
+        <div class="text-primary-emphasis col-12 mb-3 mt-5">
+            <h4><strong>ESTIMATED ANNUAL TURN OVER</strong></h4>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">                
+                
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">
+                            ESTIMATED ANNUAL TURN OVER
+                        </mat-label>
+                        <mat-select 
+                            name="selected_income"
+                            [(ngModel)]="customerInfo.selected_income">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option       
+                                *ngFor="let info of incomeBracketList"
+                                [value]="info.incomeBracketCode">
+                                    {{ info.incomeBracketdescription + ' (' + info.curCode + ')' }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    
+                    <label>Is your company quoted on any Stock Exchange</label>
+                    <mat-radio-group aria-label="Select an option" 
+                    name="stockExchange" (change)="stockExchange()"
+                    [(ngModel)]="customerInfo.stockExchange">
+                        <mat-radio-button value="yes" style="margin-left: 5px;"> Yes </mat-radio-button>
+                        <mat-radio-button value="no" style="margin-left: 5px;"> No</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                
+                <div *ngIf="customerInfo.stockExchange == 'yes'" style="margin-top: 20px;" class="col-lg-12 col-md-12 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>If answer to above question is yes, indicate which Stock Exchange and the Stock Symbol</mat-label>
+                        <input 
+                            type="text" matInput
+                            name="stockExchangeSymbol"
+                            [(ngModel)]="customerInfo.stockExchangeSymbol"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div style="margin-top: 20px;" class="col-lg-12 col-md-12 col-sm-12">
+                    <div>
+                        <label>ACCOUNT SERVICE(S) REQUIRED (Please tick option below)</label>
+                    </div>
+                    <div>
+                        <span style="margin-right: 20px;"  *ngFor="let item of account_services">  
+                            <mat-checkbox
+                                [(ngModel)]="item.checked"
+                                [checked]="item.checked"
+                            >
+                                {{ item.name }}
+                            </mat-checkbox>
+                        </span>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>        
+        <!-- End of ESTIMATED ANNUAL TURN OVER -->
+
+
+        <!-- Start of Account Specifications -->
+        <div class="text-primary-emphasis col-12 mb-3 mt-5">
+            <h4><strong>Account Specifications</strong></h4>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Account Type</mat-label>
+                        <mat-select 
+                            name="selected_accountType"
+                            [(ngModel)]="selected_accountType">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option       
+                                *ngFor="let info of accountTypes"
+                                [value]="info.acct_type">
+                                    {{info.acct_type}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Bank Branch</mat-label>
+                        <mat-select 
+                            (selectionChange)="getAccountOfficers()"
+                            name="selected_branch"
+                            [(ngModel)]="selected_branch">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option   
+                                *ngFor="let info of branchNames"
+                                [value]="info.branch_code">
+                                    {{ info.branch_name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div *ngIf="displayAccountOfficerList" class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Account Officer</mat-label>
+                        <mat-select
+                            name="seleceted_account_officer"
+                            [(ngModel)]="selected_account_officer">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option   
+                                *ngFor="let info of accountOfficerNames"
+                                [value]="info.accountOfficerName">
+                                    {{ info.accountOfficerName }}
+                            </mat-option>
+                            <mat-option
+                                [value]="'N/A'"
+                            >
+                                Not Applicable
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Agent Name</mat-label>
+                        <mat-select
+                            name="selected_agent"
+                            [(ngModel)]="selected_agent">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option   
+                                *ngFor="let info of agentNames"
+                                [value]="info.agentName">
+                                    {{ info.agentName }}
+                            </mat-option>
+                            <mat-option
+                                [value]="'N/A'"
+                            >
+                                Not Applicable
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>        
+        <!-- End of Account Specifications -->
+
+        
+        <div class="mb-3 d-flex align-items-center justify-content-center mt-5 p-5">
+            <button [routerLink]="['/verify-bvn']" style="color: white !important"
+                class="btn btn-lg itmb-color col-lg-6 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">Previous</button>
+            <button (click)="next()" style="color: white !important"
+                class="btn btn-lg itmb-color col-lg-6 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">Next</button>
+        </div>
+
+    </div>
+
+    <div class="right-side col-lg-6 col-md-12 col-sm-12 p-3">
+        <side-image></side-image>
+    </div>
+</div>

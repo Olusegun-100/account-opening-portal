@@ -1,0 +1,366 @@
+<div class="d-flex">
+    <div class="left-side col-lg-7 col-md-12 col-sm-12 p-3">
+
+        <div class="logo">
+            <img src="assets/images/itmb-logo.png" alt="" class="form-logo">
+        </div>
+
+        <!-- <div class="text-primary-emphasis col-12 mb-5">
+            <h4 class="display-6"><strong>Get Started</strong></h4>
+            <h6>Kindly Provide correct information in the fields below</h6>
+        </div> -->
+
+
+        <!-- Start of Address Information -->
+        <div class="text-primary-emphasis col-12 mb-3">
+            <h4><strong>Review Information</strong></h4>
+            <h6>To confirm your identity, please upload copies of your documents. You can attach multiple documents.
+            </h6>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <form class="row">
+                <div class="text-primary-emphasis col-12 mb-3 mt-3">
+                    <h4>Personal Information</h4>
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Bank Verification Number</label>
+                        <div class="fw-bolder">{{ rependingData.bvn }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Title</label>
+                        <div class="fw-bolder">{{ rependingData.title }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Firstname</label>
+                        <div class="fw-bolder">{{ rependingData.firstname }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Middlename</label>
+                        <div class="fw-bolder">{{ rependingData.middlename }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Lastname</label>
+                        <div class="fw-bolder">{{ rependingData.lastname }}</div>
+                    </div>
+                    
+                    
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Phone Number</label>
+                        <div class="fw-bolder">{{ rependingData.phonenumber }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Alternate Phone Number</label>
+                        <div class="fw-bolder">{{ rependingData.alt_phonenumber }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Email Address</label>
+                        <div class="fw-bolder">{{ personaldetails.email }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Mothers Maiden Name</label>
+                        <div class="fw-bolder">{{ rependingData.mothersmaidenname }}</div>
+                    </div>
+                    
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Date of Birth</label>
+                        <div class="fw-bolder">{{ rependingData.dob }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Gender</label>
+                        <div class="fw-bolder">{{ gender }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Marital Status</label>
+                        <div class="fw-bolder">{{ marital }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Religion</label>
+                        <div class="fw-bolder">{{ religion }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Place of Birth</label>
+                        <div class="fw-bolder">
+                            {{ rependingData.placeofbirth }}
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Nationality</label>
+                        <div class="fw-bolder">
+                            {{ nationality }}
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">State of Origin</label>
+                        <div class="fw-bolder">
+                            {{ state }}
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">L.G.A</label>
+                        <div class="fw-bolder">
+                            {{ lga }}
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Resident Permit Number</label>
+                        <div class="fw-bolder">
+                            {{ rependingData.residentpermitnumber }}
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Place of Permit Issue</label>
+                        <div class="fw-bolder">
+                            {{ rependingData.placeOfpermitissue }}
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Permit Issue Date</label>
+                        <div class="fw-bolder">
+                            {{ rependingData.permitIssueDate | date:"MM/dd/yy" }}
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Permit Expiry Date</label>
+                        <div class="fw-bolder">
+                            {{ rependingData.permitExpiryDate | date:"MM/dd/yy"}}
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </form>
+
+            <!-- Address Details  -->
+            <form class="row mt-5">
+                <div class="text-primary-emphasis col-12 mb-3 mt-3">
+                    <h4>Address Information</h4>
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Residential Address</label>
+                        <div class="fw-bolder">{{ rependingData.residentialaddress }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">State of Residence</label>
+                        <div class="fw-bolder">{{ rependingData.stateofresidence }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">L.G.A</label>
+                        <div class="fw-bolder">{{ rependingData.addlga }}</div>
+                    </div>
+
+                </div>
+            </form>
+
+            
+            <!-- Next of Kin  -->
+            <form class="row mt-5">
+                <div class="text-primary-emphasis col-12 mb-3 mt-3">
+                    <h4>Next of Kin</h4>
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Last Name</label>
+                        <div class="fw-bolder">{{ rependingData.nextofkin_surname }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">First Name</label>
+                        <div class="fw-bolder">{{ rependingData.nextofkin_firstname }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Phone Number</label>
+                        <div class="fw-bolder">{{ rependingData.nextofkin_phonenumber }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Email</label>
+                        <div class="fw-bolder">{{ rependingData.nextofkin_email }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Relationship</label>
+                        <div class="fw-bolder">{{ rependingData.nextofkin_relationship }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Residential Address</label>
+                        <div class="fw-bolder">{{ rependingData.nextofkin_residentialadd }}</div>
+                    </div>
+                </div>
+            </form>           
+            
+            <!-- Account Specification  -->
+            <form class="row mt-5">
+                <div class="text-primary-emphasis col-12 mb-3 mt-3">
+                    <h4>Account Specification</h4>
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Account Type</label>
+                        <div class="fw-bolder">{{ accountTypeName }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Bank Branch</label>
+                        <div class="fw-bolder">{{ branch.branch_name }}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Account Officer</label>
+                        <div class="fw-bolder">{{ rependingData.officerName }}</div>
+                    </div>
+                </div>
+            </form>            
+            
+            <!-- Employment Details  -->
+            <form class="row mt-5">
+                <div class="text-primary-emphasis col-12 mb-3 mt-3">
+                    <h4>Employment Details</h4>
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Employment Status</label>
+                        <div class="fw-bolder">{{employmentStatus}}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Annual Salary / Expected Income</label>
+                        <div class="fw-bolder">{{income}}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Sector</label>
+                        <div class="fw-bolder">{{sector}}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Occupation</label>
+                        <div class="fw-bolder">{{occupation}}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">Business Type</label>
+                        <div class="fw-bolder">{{business}}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">TIN</label>
+                        <div class="fw-bolder">{{rependingData.tin}}</div>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <label class="text-secondary fw-semibold">RCNO</label>
+                        <div class="fw-bolder">{{rependingData.rcno}}</div>
+                    </div>
+                </div>
+            </form>
+            
+            <!-- Uploaded Documents  -->
+            <form class="row mt-5">
+                <div class="text-primary-emphasis col-12 mb-3 mt-3">
+                    <h4>Uploaded Documents</h4>
+                </div>
+
+                <div class="row">
+
+                    <div class="table-responsive">
+                        <table class="table caption-top">
+                            <thead>
+                              <tr>
+                                <th scope="col">S/N</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Attachment</th>
+                                <!-- <th scope="col">Action</th> -->
+                              </tr>
+                            </thead>
+        
+                            <tbody>
+                              <tr  *ngFor="let info of rependingDocs; let i =index">
+                                <td>{{ i + 1 }}</td>
+                                <td>{{ info.doc_type }}</td>
+                                <td>{{ info.file_name }}</td>
+                                <!-- <td>
+                                    <button
+                                        (click)="view(info)"
+                                        style="margin-right: 10px !important;"
+                                        class="btn btn-primary btn-sm mb-1"
+                                        data-toggle="modal" data-target="#exampleModal"
+                                    >
+                                        View
+                                    </button>
+                                    <a
+                                    (click)="download(info)"
+                                    [href]="base64image"
+                                    class="btn btn-outline-primary btn-sm m-r-10 m-b-5"
+                                    [download]="base64imageName"
+                                    target="_blank"
+                                    >
+                                        Download
+                                    </a>
+                                </td> -->
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+
+
+        <!-- End of Address Information -->
+        <div class="mb-3 d-flex align-items-center justify-content-center mt-5">
+            <button 
+                [routerLink]="['/r/upload-document']" 
+                style="color: white !important" 
+                class="btn btn-lg itmb-color col-lg-4 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">
+                    Previous
+            </button>
+            <button 
+                [disabled]="isLoading"
+                (click)="submit($event)" 
+                style="color: white !important" 
+                class="btn btn-lg itmb-color col-lg-4 col-md-12 col-sm-12 mx-3 fs-6 fw-semibold">
+                    <span *ngIf="isLoading">                                                            
+                        <img [src]="imageSpinner" alt="Wait..." style="height: 7%; width: 7%; text-align: center;">
+                    </span>
+                    <span *ngIf="!isLoading"> Submit </span>
+            </button>
+            <!-- <a [routerLink]="['/s/success']" (click)="submit()" class="btn btn-lg itmb-color col-lg-4 col-md-12 col-sm-12 mx-3 fs-6 fw-semibold">Confirm</a> -->
+        </div>
+    </div>
+    
+    <div class="right-side col-lg-5 col-md-12 col-sm-12 p-3">
+        <side-image></side-image>
+    </div>
+</div>

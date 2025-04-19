@@ -1,0 +1,445 @@
+<div class="d-flex">
+    <div class="left-side col-lg-6 col-md-12 col-sm-12 p-3">
+
+        <div class="logo">
+            <img src="assets/images/itmb-logo.png" alt="" class="form-logo">
+        </div>
+
+        <div class="text-primary-emphasis col-12 mb-5">
+            <h4 class="display-6"><strong>Get Started</strong></h4>
+            <h6>Kindly provide correct information in the fields below</h6>
+        </div>
+
+        <div class="text-primary-emphasis col-12 mb-3">
+            <h4><strong>Personal Information</strong></h4>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <form class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">BVN</mat-label>
+                        <input 
+                            type="text" matInput
+                            [(ngModel)]="rependingData.bvn" readonly
+                            name="bvn" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+                
+                <!-- <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Title</mat-label>
+                        <mat-select 
+                            name="selected_title"
+                            [(ngModel)]="rependingData.title">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option                                
+                                *ngFor="let info of titleList" 
+                                [value]="info.title">
+                                    {{info.title}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div> -->
+
+                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Company / Business Name</mat-label>
+                        <input 
+                            type="text" matInput
+                            name="companyname" 
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">            
+                    <mat-form-field
+                        class="full-width"
+                        appearance="fill">
+                        <mat-label>
+                            Date of Incorporation / Registration
+                        </mat-label>
+                        <input 
+                            autocomplete="off"
+                            name="permitIssueDate" 
+                            [(ngModel)]="rependingData.permitIssueDate" matInput [matDatepicker]="permitIssueDate"/>
+                            <mat-datepicker-toggle matSuffix [for]="permitIssueDate"></mat-datepicker-toggle>
+                            <mat-datepicker #permitIssueDate></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input 
+                            type="text" matInput
+                            [(ngModel)]="rependingData.lastname" 
+                            name="lastname" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Phone Number</mat-label>
+                        <input 
+                            type="text" matInput
+                            [(ngModel)]="rependingData.phonenumber" 
+                            name="phonenumber1" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Alternate Phone Number</mat-label>
+                        <input 
+                            type="text" matInput
+                            [(ngModel)]="rependingData.alt_phonenumber" 
+                            name="phonenumber2" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="email" matInput
+                            [(ngModel)]="rependingData.email" 
+                            name="email"
+                        />
+                    </mat-form-field>
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Mother's Maiden Name</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="rependingData.mothersmaidenname" 
+                            name="mothersmaidenname"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Date Of Birth</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="rependingData.dob" 
+                            name="dateofbirth" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Gender</mat-label>
+                        <mat-select 
+                            name="selected_gender"
+                            [(ngModel)]="rependingData.gender">
+                            <mat-option
+                            [value]="null"
+                            disabled
+                            selected>
+                                Select
+                            </mat-option>
+                            <mat-option
+                                *ngFor="let info of genderList" 
+                                [value]="info.code">
+                                    {{info.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Marital Status</mat-label>
+                        <mat-select 
+                            name="maritalstatus"
+                            [(ngModel)]="rependingData.maritalstatus">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option *ngFor="let info of maritalList" [value]="info.code">
+                                {{info.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Religion</mat-label>
+                        <mat-select 
+                            name="religion"
+                            [(ngModel)]="rependingData.religion">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option  
+                                *ngFor="let info of religionList" 
+                                [value]="info.code">
+                                {{info.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Place Of Birth</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="rependingData.placeofbirth" 
+                            name="placeofbirth"
+                        />
+                    </mat-form-field>                      
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                      class="full-width"
+                      appearance="outline">
+                      <mat-label class="text-secondary"> Nationality </mat-label>
+                      <mat-select 
+                        (selectionChange)="getState()"
+                        name="nationality"
+                        [(ngModel)]="rependingData.nationality">
+                          <mat-option
+                              [value]="null"
+                              disabled
+                              selected>
+                                  Select
+                          </mat-option>
+                          <mat-option                                
+                            *ngFor="let info of nationalities" 
+                            [value]="info.countryCode">
+                                {{info.countryName}}
+                          </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">State of Origin</mat-label>
+                        <mat-select 
+                            (selectionChange)="getLga()"                         
+                            name="stateoforigin"
+                            [(ngModel)]="rependingData.stateoforigin">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option                                
+                                *ngFor="let info of stateNames" 
+                                [value]="info.stateCode">
+                                    {{ info.stateName }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">L.G.A. of Origin</mat-label>
+                        <mat-select 
+                            name="lga"
+                            [(ngModel)]="rependingData.lga">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option                                
+                            *ngFor="let info of lgaList" [value]="info.lgaCode">
+                            {{ info.lgaName }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">                
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>RESIDENTIAL ADDRESS</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="rependingData.residentialaddress" 
+                            name="residentialaddress"
+                        />
+                    </mat-form-field> 
+                
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label> State of Residence </mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="rependingData.stateofresidence" 
+                            name="stateofresidence"
+                        />
+                    </mat-form-field> 
+                
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>L.G.A of Residence </mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="rependingData.addlga" 
+                            name="addlga"
+                        />
+                    </mat-form-field> 
+                </div>
+
+                <!-- <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Resident Permit Number</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="rependingData.residentpermitnumber"
+                            name="residentpermitnumber"
+                        />
+                    </mat-form-field>
+                </div> -->
+<!-- 
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Place of Permit Issue</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="rependingData.placeOfpermitissue"
+                            name="placeofpermitissue"
+                        />
+                    </mat-form-field>
+                </div> -->
+
+                <!-- <div class="col-lg-6 col-md-6 col-sm-12">            
+                    <mat-form-field
+                        class="full-width"
+                        appearance="fill">
+                        <mat-label>
+                            Permit Issue Date
+                        </mat-label>
+                        <input 
+                            autocomplete="off"
+                            name="permitIssueDate" 
+                            [(ngModel)]="rependingData.permitIssueDate" matInput [matDatepicker]="permitIssueDate"/>
+                            <mat-datepicker-toggle matSuffix [for]="permitIssueDate"></mat-datepicker-toggle>
+                            <mat-datepicker #permitIssueDate></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="fill">
+                        <mat-label>
+                            Permit Expiry  Date
+                        </mat-label>
+                        <input 
+                            autocomplete="off"
+                            name="permitExpiryDate" 
+                            [(ngModel)]="rependingData.permitExpiryDate" matInput [matDatepicker]="permitExpiryDate"/>
+                            <mat-datepicker-toggle matSuffix [for]="permitExpiryDate"></mat-datepicker-toggle>
+                            <mat-datepicker #permitExpiryDate></mat-datepicker>
+                    </mat-form-field>
+                </div> -->
+
+
+                
+
+                
+
+                <!-- <div class="form-group mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div> -->
+
+                <!-- <div class="mb-3 d-flex align-items-center justify-content-center mt-5">
+                    <a [routerLink]="['/account-specification']" type="submit" class="btn btn-lg itmb-color col-lg-6 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">Next</a>
+                </div> -->
+
+                <div class="mb-3 d-flex align-items-center justify-content-center mt-5 p-5">
+                    <button (click)="next()" style="color: white !important"
+                        class="btn btn-lg itmb-color col-lg-6 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="right-side col-lg-6 col-md-12 col-sm-12 p-3">
+        <side-image></side-image>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+.spinner-class{
+    height: 20%;
+    width: 20%;
+}
+
+.cursor{
+    cursor: pointer !important;
+}

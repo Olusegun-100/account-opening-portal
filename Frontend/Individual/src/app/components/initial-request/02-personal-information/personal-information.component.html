@@ -1,0 +1,440 @@
+<div class="d-flex">
+    <div class="left-side col-lg-6 col-md-12 col-sm-12 p-3">
+
+        <div class="logo">
+            <img src="assets/images/itmb-logo.png" alt="" class="form-logo">
+        </div>
+
+        <div class="text-primary-emphasis col-12 mb-5">
+            <h4 class="display-6"><strong>Get Started</strong></h4>
+            <h6>Kindly provide correct information in the fields below</h6>
+        </div>
+
+        <div class="text-primary-emphasis col-12 mb-3">
+            <h4><strong>Personal Information</strong></h4>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <form class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">BVN</mat-label>
+                        <input 
+                            type="text" matInput
+                            [(ngModel)]="personaldetails.bvn"
+                            name="bvn" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Title</mat-label>
+                        <mat-select 
+                            name="selected_title"
+                            [(ngModel)]="customerInfo.selected_title">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option                                
+                                *ngFor="let info of titleList" 
+                                [value]="info.title">
+                                    {{info.title}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">First Name</mat-label>
+                        <input 
+                            type="text" matInput
+                            [(ngModel)]="personaldetails.firstname" 
+                            name="firstname" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Middle Name</mat-label>
+                        <input 
+                            type="text" matInput
+                            [(ngModel)]="personaldetails.middlename" 
+                            name="middlename" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input 
+                            type="text" matInput
+                            [(ngModel)]="personaldetails.lastname" 
+                            name="lastname" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Phone Number</mat-label>
+                        <input 
+                            type="text" matInput
+                            [(ngModel)]="personaldetails.phonenumber1" 
+                            name="phonenumber1" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Alternate Phone Number</mat-label>
+                        <input 
+                            type="text" matInput
+                            [(ngModel)]="personaldetails.phonenumber2" 
+                            name="phonenumber2" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="email" matInput
+                            [(ngModel)]="personaldetails.email" 
+                            name="email" [disabled]="!!isEmailAvailable"
+                        />
+                    </mat-form-field>
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Mother's Maiden Name</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="userpersonaldetails.mothersmaidenname" 
+                            name="mothersmaidenname"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Date Of Birth</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="personaldetails.dateofbirth" 
+                            name="dateofbirth" [disabled]="true"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Gender</mat-label>
+                        <mat-select 
+                            name="selected_gender"
+                            [(ngModel)]="customerInfo.selected_gender">
+                            <mat-option
+                            [value]="null"
+                            disabled
+                            selected>
+                                Select
+                            </mat-option>
+                            <mat-option
+                                *ngFor="let info of genderList" 
+                                [value]="info.code">
+                                    {{info.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Marital Status</mat-label>
+                        <mat-select 
+                            name="selected_maritalStatus"
+                            [(ngModel)]="customerInfo.selected_maritalStatus">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option *ngFor="let info of maritalList" [value]="info.code">
+                                {{info.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Religion</mat-label>
+                        <mat-select 
+                            name="selected_religion"
+                            [(ngModel)]="customerInfo.selected_religion">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option  
+                                *ngFor="let info of religionList" 
+                                [value]="info.code">
+                                {{info.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Place Of Birth</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="userpersonaldetails.placeofbirth" 
+                            name="placeofbirth"
+                        />
+                    </mat-form-field>                      
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                      class="full-width"
+                      appearance="outline">
+                      <mat-label class="text-secondary"> Nationality </mat-label>
+                      <mat-select 
+                        (selectionChange)="getState()" 
+                        name="selected_nationality"
+                        [(ngModel)]="customerInfo.selected_nationality">
+                          <mat-option
+                              [value]="null"
+                              disabled
+                              selected>
+                                  Select
+                          </mat-option>
+                          <mat-option                                
+                            *ngFor="let info of nationalities" 
+                            [value]="info.countryCode">
+                                {{info.countryName}}
+                          </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 ">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">State of Origin</mat-label>
+                        <mat-select 
+                            (selectionChange)="getLga()"                         
+                            name="selected_state"
+                            [(ngModel)]="customerInfo.selected_state">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option                                
+                                *ngFor="let info of stateNames" 
+                                [value]="info.stateCode">
+                                    {{ info.stateName }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">L.G.A. of Origin</mat-label>
+                        <mat-select 
+                            name="selected_lga"
+                            [(ngModel)]="customerInfo.selected_lga">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option                                
+                            *ngFor="let info of lgaList" [value]="info.lgaCode">
+                            {{ info.lgaName }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">                
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>RESIDENTIAL ADDRESS</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="personaldetails.residentialaddress" 
+                            name="residentialaddress"
+                        />
+                    </mat-form-field> 
+                
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label> State of Residence </mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="personaldetails.stateofresidence" 
+                            name="stateofresidence"
+                        />
+                    </mat-form-field> 
+                
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>L.G.A of Residence </mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="personaldetails.lgaofresidence" 
+                            name="lgaofresidence"
+                        />
+                    </mat-form-field> 
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Resident Permit Number</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="userpersonaldetails.residentpermitnumber"
+                            name="residentpermitnumber"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Place of Permit Issue</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="userpersonaldetails.placeofpermitissue"
+                            name="placeofpermitissue"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">            
+                    <mat-form-field
+                        class="full-width"
+                        appearance="fill">
+                        <mat-label>
+                            Permit Issue Date
+                        </mat-label>
+                        <input 
+                            autocomplete="off"
+                            name="permitissuedate" 
+                            [(ngModel)]="userpersonaldetails.permitissuedate" matInput [matDatepicker]="permitissuedate"/>
+                            <mat-datepicker-toggle matSuffix [for]="permitissuedate"></mat-datepicker-toggle>
+                            <mat-datepicker #permitissuedate></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="fill">
+                        <mat-label>
+                            Permit Expiry  Date
+                        </mat-label>
+                        <input 
+                            autocomplete="off"
+                            name="permitexpirydate" 
+                            [(ngModel)]="userpersonaldetails.permitexpirydate" matInput [matDatepicker]="permitexpirydate"/>
+                            <mat-datepicker-toggle matSuffix [for]="permitexpirydate"></mat-datepicker-toggle>
+                            <mat-datepicker #permitexpirydate></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <!-- <div class="form-group mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div> -->
+
+                <!-- <div class="mb-3 d-flex align-items-center justify-content-center mt-5">
+                    <a [routerLink]="['/account-specification']" type="submit" class="btn btn-lg itmb-color col-lg-6 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">Next</a>
+                </div> -->
+
+                <div class="mb-3 d-flex align-items-center justify-content-center mt-5 p-5">
+                    <button [routerLink]="['/verify-bvn']" style="color: white !important"
+                        class="btn btn-lg itmb-color col-lg-6 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">Previous</button>
+                    <button (click)="next()" style="color: white !important"
+                        class="btn btn-lg itmb-color col-lg-6 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="right-side col-lg-6 col-md-12 col-sm-12 p-3">
+        <side-image></side-image>
+    </div>
+</div>

@@ -1,0 +1,359 @@
+
+<div class="d-flex">
+    <div class="left-side col-lg-6 col-md-12 col-sm-12 p-3">
+
+        <div class="logo">
+            <img src="assets/images/itmb-logo.png" alt="" class="form-logo">
+        </div>
+
+        <div class="text-primary-emphasis col-12 mb-5">
+            <h4 class="display-6"><strong>Get Started</strong></h4>
+            <h6>Kindly provide correct information in the fields below</h6>
+        </div>
+        
+        <!-- Start of Next of Kin -->
+        <div class="text-primary-emphasis col-12 mb-3 mt-5">
+            <h4><strong>Next of Kin</strong></h4>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                    class="full-width"
+                        appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="nextofkin.surname" 
+                            name="surname"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="nextofkin.firstname" 
+                            name="firstname"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Phone Number</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="nextofkin.phonenumber" 
+                            name="phonenumber"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Relationship</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="nextofkin.relationship" 
+                            name="relationship"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="nextofkin.email" 
+                            name="email"
+                        />
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>Residential Address</mat-label>
+                        <textarea 
+                        autocomplete="off"
+                        [(ngModel)]="nextofkin.residentialadd"
+                        name="residentialadd"
+                        matInput></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <!-- End of Next of Kin -->
+
+
+        <!-- Start of Account Specifications -->
+        <div class="text-primary-emphasis col-12 mb-3 mt-5">
+            <h4><strong>Account Specifications</strong></h4>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Account Type</mat-label>
+                        <mat-select 
+                            (selectionChange)="selectedAccountType()"
+                            name="selected_accountType"
+                            [(ngModel)]="selected_accountType">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option       
+                                *ngFor="let info of accountTypes"
+                                [value]="info.acct_type">
+                                    {{info.acct_type}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Bank Branch</mat-label>
+                        <mat-select 
+                            (selectionChange)="getAccountOfficers()"
+                            name="selected_branch"
+                            [(ngModel)]="selected_branch">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option   
+                                *ngFor="let info of branchNames"
+                                [value]="info.branch_code">
+                                    {{ info.branch_name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div *ngIf="displayAccountOfficerList" class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Account Officer</mat-label>
+                        <mat-select
+                            name="seleceted_account_officer"
+                            [(ngModel)]="seleceted_account_officer">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option   
+                                *ngFor="let info of accountOfficerNames"
+                                [value]="info.accountOfficerName">
+                                    {{ info.accountOfficerName }}
+                            </mat-option>
+                            <mat-option
+                                [value]="'N/A'"
+                            >
+                                Not Applicable
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>        
+        <!-- End of Account Specifications -->
+
+
+        <!-- Start of Employment Details -->
+        <div class="text-primary-emphasis col-12 mb-3 mt-5">
+            <h4><strong>Employment Details</strong></h4>
+        </div>        
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Employment Status</mat-label>
+                        <mat-select 
+                            name="selected_employment"
+                            [(ngModel)]="customerInfo2.selected_employment">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option       
+                                *ngFor="let info of employmentTypeList"
+                                [value]="info.code">
+                                    {{info.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Income</mat-label>
+                        <mat-select 
+                            name="selected_income"
+                            [(ngModel)]="customerInfo2.selected_income">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option       
+                                *ngFor="let info of incomeBracketList"
+                                [value]="info.incomeBracketCode">
+                                    {{ info.incomeBracketdescription }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Sector</mat-label>
+                        <mat-select 
+                            name="selected_sector"
+                            [(ngModel)]="customerInfo2.selected_sector">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option       
+                                *ngFor="let info of sectorList"
+                                [value]="info.code">
+                                    {{ info.description }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Occupation</mat-label>
+                        <mat-select 
+                            name="selected_occupation"
+                            [(ngModel)]="customerInfo2.selected_occupation">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option       
+                                *ngFor="let info of occupationList"
+                                [value]="info.code">
+                                    {{ info.description }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Business Type</mat-label>
+                        <mat-select 
+                            name="selected_businessType"
+                            [(ngModel)]="customerInfo2.selected_businessType">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option       
+                                *ngFor="let info of businessTypeList"
+                                [value]="info.code">
+                                    {{ info.decription }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <!-- <div class="col-lg-6 col-md-6 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>TIN</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="userpersonaldetails2.tin" 
+                            name="tin"
+                        />
+                    </mat-form-field>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">                    
+                    <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label>RC Number</mat-label>
+                        <input 
+                            autocomplete="off"
+                            type="text" matInput
+                            [(ngModel)]="userpersonaldetails2.rcNumber" 
+                            name="rcNumber"
+                        />
+                    </mat-form-field>
+                </div> -->
+            </div>
+        </div>        
+        <!-- End of Employment Details -->
+
+        
+        <div class="mb-3 d-flex align-items-center justify-content-center mt-5 p-5">
+            <button [routerLink]="['/personal-information']" style="color: white !important"
+                class="btn btn-lg itmb-color col-lg-6 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">Previous</button>
+            <button (click)="next()" style="color: white !important"
+                class="btn btn-lg itmb-color col-lg-6 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">Next</button>
+        </div>
+
+    </div>
+
+    <div class="right-side col-lg-6 col-md-12 col-sm-12 p-3">
+        <side-image></side-image>
+    </div>
+</div>

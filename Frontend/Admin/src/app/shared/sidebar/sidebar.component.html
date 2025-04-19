@@ -1,0 +1,16 @@
+<div class="left_sidebar">
+    <nav class="sidebar">
+        <ul id="main-menu" class="metismenu left_bar">
+            <li class="active"><a [routerLink]="['/']"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+            <li class=""><a [routerLink]="['/pending-request']" ><i class="fa fa-history"></i><span>Pending Requests</span></a>
+            </li>
+            <!-- <li *ngIf="rolename == 'approver'" class=""><a [routerLink]="['/pending-approvingrequests']" ><i class="fa fa-history"></i><span>Pending Approved Requests</span></a>
+            </li> -->
+            <li class=""><a [routerLink]="['/approval-request']"><i class="fa fa-check"></i><span>Approved Requests</span></a></li>
+            <li class=""><a [routerLink]="['/rejected-request']"><i class="fa fa-times"></i><span>Fully Rejected </span></a></li>
+            <li class=""><a [routerLink]="['/repending-request']"><i class="fa fa-times"></i><span>Partially Rejected </span></a></li>
+            <li class=""><a [routerLink]="['/login']"><i class="fa fa-sign-out"></i><span>Logout</span></a></li>
+
+        </ul>
+    </nav>
+</div>

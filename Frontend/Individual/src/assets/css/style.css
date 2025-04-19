@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap');
+
+.left-side {
+    background-color: #fff;
+}
+
+.right-side {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0px;
+    overflow: hidden;
+    background: url(../images/bground.png);
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.itmb-color
+{
+    background-color: #b1a154 !important;
+    color: black !important;
+    font-weight: 500 !important;
+}
+
+.itmb-text-color
+{
+    color: #b1a154 !important;
+    font-weight: 500 !important;
+}
+
+
+.logo {
+     text-align: center; 
+}
+
+.left-side .logo .form-logo {
+    width: 180px;
+    height: 150px;
+    margin-bottom: 50px;
+}
+
+.right-side-img-container
+{
+    opacity: 1;
+    background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+    width: 100%;
+    position: relative;
+}
+
+.right-side-images-1
+{
+    border-radius: 9999px;
+    width: 4rem;
+    height: 4rem;
+    top: 0px;
+    left: 0.5rem;
+    position: absolute;
+}
+
+
+.right-side-images-2
+{
+    border-radius: 9999px;
+    width: 4rem;
+    height: 4rem;
+    z-index: 10;
+    top: 0px;
+    left: 3rem;
+    position: absolute;
+}
+
+.right-side-images-3
+{
+    border-radius: 9999px;
+    width: 4rem;
+    height: 4rem;
+    z-index: 20;
+    top: 0px;
+    left: 6rem;
+    position: absolute;
+}
+
+.right-side-images-4
+{
+    border-radius: 9999px;
+    width: 4rem;
+    height: 4rem;
+    z-index: 30;
+    top: 0px;
+    left: 9rem;
+    position: absolute;
+}
+
+.right-side-images-5
+{
+    border-radius: 9999px;
+    width: 4rem;
+    height: 4rem;
+    z-index: 40;
+    top: 0px;
+    left: 12rem;
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 992px) {
+    .right-side
+    {
+        display: none;
+    }
+ }
+ 
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {}
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+    
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+    
+ }
+ 
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+    
+ } 

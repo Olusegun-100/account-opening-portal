@@ -1,0 +1,706 @@
+
+<div class="d-flex">
+    <div class="left-side col-lg-6 col-md-12 col-sm-12 p-3">
+
+        <div class="logo">
+            <img [src]="imageLogo" alt="itmb-logo" class="form-logo">
+        </div>
+
+        <div class="text-primary-emphasis col-12 mb-5">
+            <h4 class="display-6"><strong>Get Started</strong></h4>
+            <h6>Kindly provide correct information in the fields below</h6>
+        </div>
+        
+
+        <!-- Start of DETAILS OF ACCOUNT HELD WITH OTHER BANKS BY ENTITY / PROPRIETOR -->
+        <div class="text-primary-emphasis col-12 mb-3 mt-5">
+            <h4><strong>DETAILS OF ACCOUNT HELD WITH OTHER BANKS BY ENTITY / PROPRIETOR</strong></h4>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    
+                    <span *ngFor="let form of account_held_form; let i = index" class="form-container">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>NAME AND ADDRESS OF BANK / BRANCH</mat-label>
+                            <input type="text" matInput name="nameANDaddress" [(ngModel)]="account_held_form[i].nameANDaddress">
+                        </mat-form-field>
+                        
+                        <!-- <div *ngIf="!validateInput(account_held_form[i].nameANDaddress)" class="error-message">NAME AND ADDRESS OF BANK / BRANCH is required</div> -->
+
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>ACCOUNT NAME</mat-label>
+                            <input type="text" matInput name="accountName" [(ngModel)]="account_held_form[i].accountName">
+                        </mat-form-field>
+
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>ACCOUNT NUMBER</mat-label>
+                            <input type="text" matInput name="accountNumber" [(ngModel)]="account_held_form[i].accountNumber">
+                        </mat-form-field>
+
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>STATUS (Active / Dormant)</mat-label>
+                            <input type="text" matInput name="status" [(ngModel)]="account_held_form[i].status">
+                        </mat-form-field>
+
+                        <!-- Add more input fields as needed -->
+                        <button class="btn btn-outline-danger" style="margin-bottom: 20px;" (click)="removeAccountHeldForm(i)"> Remove Account - </button>
+                        <hr/>
+                    </span>
+
+                    <button [disabled]="account_held_form.length > 2" class="btn btn-secondary" (click)="addAccountHeldForm()">Add Account + </button>
+                </div>
+
+            </div>
+        </div>        
+        <!-- End of DETAILS OF ACCOUNT HELD WITH OTHER BANKS BY ENTITY / PROPRIETOR -->
+        
+        <hr/>
+
+        <!-- Start of KEY CONTACT PERSON(S) -->
+        <div class="text-primary-emphasis col-12 mb-3 mt-5">
+            <h4><strong>KEY CONTACT PERSON(S)</strong></h4>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    
+                    <span *ngFor="let form of contact_person_form; let i = index" class="form-container">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>FULL NAME</mat-label>
+                            <input type="text" autocomplete="off" matInput name="fullname" [(ngModel)]="contact_person_form[i].fullname">
+                        </mat-form-field>
+
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>JOB TITLE</mat-label>
+                            <input type="text" autocomplete="off" matInput name="jobtitle" [(ngModel)]="contact_person_form[i].jobtitle">
+                        </mat-form-field>
+
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>EMAIL</mat-label>
+                            <input type="text" autocomplete="off" matInput name="email" [(ngModel)]="contact_person_form[i].email">
+                        </mat-form-field>
+
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>PHONE NUMBER</mat-label>
+                            <input type="text" autocomplete="off" matInput name="mobilenumber" [(ngModel)]="contact_person_form[i].mobilenumber">
+                        </mat-form-field>
+
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>OFFICE ADDRESS</mat-label>
+                            <input type="text" autocomplete="off" matInput name="officeaddress" [(ngModel)]="contact_person_form[i].officeaddress">
+                        </mat-form-field>
+                        <!-- Add more input fields as needed -->
+                        <button class="btn btn-outline-danger" style="margin-bottom: 20px;" (click)="removeContactPersonForm(i)"> Remove Contact - </button>
+                        <hr/>
+                    </span>
+
+                    <button [disabled]="contact_person_form.length > 2" class="btn btn-secondary" (click)="addContactPersonForm()">Add Contact + </button>
+                </div>
+
+            </div>
+        </div>        
+        <!-- End of KEY CONTACT PERSON(S) -->
+        
+        <hr/>
+
+        <!-- Start of SIGNATORIES -->
+        <div class="text-primary-emphasis col-12 mb-3 mt-5">
+            <h4><strong>SIGNATORIES</strong></h4>
+        </div>
+        <div *ngFor="let form of signatories_form; let i = index" class="col-lg-12 col-md-12 col-sm-12">
+            <form class="row">
+                
+                <!-- <span> -->
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        
+                        <mat-form-field
+                            class="full-width"
+                            style="margin-top: 20px;"
+                            appearance="outline">
+                            <mat-label class="text-secondary">Title</mat-label>
+                            <mat-select 
+                                name="title"
+                                [(ngModel)]="signatories_form[i].title">
+                                <mat-option
+                                    [value]="null"
+                                    disabled
+                                    selected>
+                                        Select
+                                </mat-option>
+                                <mat-option                                
+                                    *ngFor="let info of titleList" 
+                                    [value]="info.title">
+                                        {{info.title}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            style="margin-top: 20px;"
+                            appearance="outline">
+                            <mat-label>FIRST NAME</mat-label>
+                            <input autocomplete="off" type="text" matInput name="first_name" [(ngModel)]="signatories_form[i].first_name">
+                        </mat-form-field>
+                    </span>
+                    
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>LAST NAME</mat-label>
+                            <input autocomplete="off" type="text" matInput name="last_name" [(ngModel)]="signatories_form[i].last_name">
+                        </mat-form-field>
+                    </span>
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>OTHER NAME(S)</mat-label>
+                            <input autocomplete="off" type="text" matInput name="middle_name" [(ngModel)]="signatories_form[i].middle_name">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Marital Status</mat-label>
+                        <mat-select 
+                            name="selected_maritalStatus"
+                            [(ngModel)]="signatories_form[i].marital_status">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option *ngFor="let info of maritalList" [value]="info.description">
+                                {{info.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Gender</mat-label>
+                        <mat-select 
+                            name="selected_gender"
+                            [(ngModel)]="signatories_form[i].gender">
+                            <mat-option
+                            [value]="null"
+                            disabled
+                            selected>
+                                Select
+                            </mat-option>
+                            <mat-option
+                                *ngFor="let info of genderList" 
+                                [value]="info.description">
+                                    {{info.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="fill">
+                            <mat-label>
+                                Date of Birth
+                            </mat-label>
+                            <input 
+                                autocomplete="off"
+                                name="dob" 
+                                [(ngModel)]="signatories_form[i].dob" matInput [matDatepicker]="dob"/>
+                                <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+                                <mat-datepicker #dob></mat-datepicker>
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                      class="full-width"
+                      appearance="outline">
+                      <mat-label class="text-secondary"> COUNTRY OF BIRTH </mat-label>
+                      <mat-select 
+                        name="place_of_birth"
+                        [(ngModel)]="signatories_form[i].place_of_birth">
+                          <mat-option
+                              [value]="null"
+                              disabled
+                              selected>
+                                  Select
+                          </mat-option>
+                          <mat-option                                
+                            *ngFor="let info of nationalities" 
+                            [value]="info.countryName">
+                                {{info.countryName}}
+                          </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>MOTHER'S MAIDEN NAME</mat-label>
+                            <input autocomplete="off" type="text" matInput name="mother_maidenname" [(ngModel)]="signatories_form[i].mother_maidenname">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>NAME OF NEXT OF KIN</mat-label>
+                            <input autocomplete="off" type="text" matInput name="nextofkinName" [(ngModel)]="signatories_form[i].nextofkinName">
+                        </mat-form-field>
+                    </span>
+                    
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label class="text-secondary"> NATIONALITY </mat-label>
+                            <mat-select 
+                                (selectionChange)="getState(signatories_form[i].nationality)"
+                                name="nationality"
+                                [(ngModel)]="signatories_form[i].nationality">
+                                <mat-option
+                                    [value]="null"
+                                    disabled
+                                    selected>
+                                        Select
+                                </mat-option>
+                                <mat-option                                
+                                    *ngFor="let info of nationalities" 
+                                    [value]="info.countryName">
+                                        {{info.countryName}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">State of Origin</mat-label>
+                        <mat-select 
+                            (selectionChange)="getLga(signatories_form[i].nationality, signatories_form[i].state_of_origin)"                         
+                            name="state_of_origin"
+                            [(ngModel)]="signatories_form[i].state_of_origin">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option                                
+                                *ngFor="let info of stateNames" 
+                                [value]="info.stateName">
+                                    {{ info.stateName }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label class="text-secondary">L.G.A. of Origin</mat-label>
+                            <mat-select 
+                                name="lga"
+                                [(ngModel)]="signatories_form[i].lga">
+                                <mat-option
+                                    [value]="null"
+                                    disabled
+                                    selected>
+                                        Select
+                                </mat-option>
+                                <mat-option                                
+                                *ngFor="let info of lgaList" [value]="info.lgaName">
+                                {{ info.lgaName }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>TIN</mat-label>
+                            <input autocomplete="off" type="text" matInput name="last_name" [(ngModel)]="signatories_form[i].tin">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">Religion</mat-label>
+                        <mat-select 
+                            name="selected_religion"
+                            [(ngModel)]="signatories_form[i].religion">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option  
+                                *ngFor="let info of religionList" 
+                                [value]="info.code">
+                                {{info.description}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>MEANS OF IDENTIFICATION</mat-label>
+                            <input autocomplete="off" type="text" matInput name="meansofidentification" [(ngModel)]="signatories_form[i].meansofidentification">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>IDENTIFICATION NUMBER</mat-label>
+                            <input autocomplete="off" type="text" matInput name="identificationnumber" [(ngModel)]="signatories_form[i].identificationnumber">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="fill">
+                            <mat-label>
+                                ID ISSUE DATE
+                            </mat-label>
+                            <input 
+                                autocomplete="off"
+                                name="idissuerdate" 
+                                [(ngModel)]="signatories_form[i].idissuerdate" matInput [matDatepicker]="idissuerdate"/>
+                                <mat-datepicker-toggle matSuffix [for]="idissuerdate"></mat-datepicker-toggle>
+                                <mat-datepicker #idissuerdate></mat-datepicker>
+                        </mat-form-field>
+                    </span>                    
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+
+                        <mat-form-field
+                            class="full-width"
+                            appearance="fill">
+                            <mat-label>
+                                ID EXPIRY DATE
+                            </mat-label>
+                            <input 
+                                autocomplete="off"
+                                name="idexpirydate" 
+                                [(ngModel)]="signatories_form[i].idexpirydate" matInput [matDatepicker]="idexpirydate"/>
+                                <mat-datepicker-toggle matSuffix [for]="idexpirydate"></mat-datepicker-toggle>
+                                <mat-datepicker #idexpirydate></mat-datepicker>
+                        </mat-form-field>
+
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label class="text-secondary">Occupation</mat-label>
+                            <!-- <mat-select 
+                                name="occupation"
+                                [(ngModel)]="signatories_form[i].occupation">
+                                <mat-option
+                                    [value]="null"
+                                    disabled
+                                    selected>
+                                        Select
+                                </mat-option>
+                                <mat-option       
+                                    *ngFor="let info of occupationList"
+                                    [value]="info.code">
+                                        {{ info.description }}
+                                </mat-option> 
+                            </mat-select> -->
+                                
+                            <input autocomplete="off" type="text" matInput name="occupation" [(ngModel)]="signatories_form[i].occupation">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>STATUS / JOB TITLE</mat-label>
+                            <input autocomplete="off" type="text" matInput name="jobtitle" [(ngModel)]="signatories_form[i].jobtitle">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>POSITION / OFFICE OF THE SIGNATORY</mat-label>
+                            <input autocomplete="off" type="text" matInput name="office" [(ngModel)]="signatories_form[i].office">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>RESIDENT PERMIT NUMBER</mat-label>
+                            <input autocomplete="off" type="text" matInput name="resident_permit_number" [(ngModel)]="signatories_form[i].resident_permit_number">
+                        </mat-form-field>
+                    </span>
+                    
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="fill">
+                            <mat-label>
+                                PERMIT ISSUE DATE
+                            </mat-label>
+                            <input 
+                                autocomplete="off"
+                                name="permit_issue_date" 
+                                [(ngModel)]="signatories_form[i].permit_issue_date" matInput [matDatepicker]="permit_issue_date"/>
+                                <mat-datepicker-toggle matSuffix [for]="permit_issue_date"></mat-datepicker-toggle>
+                                <mat-datepicker #permit_issue_date></mat-datepicker>
+                        </mat-form-field>
+                    </span>               
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+
+                        <mat-form-field
+                            class="full-width"
+                            appearance="fill">
+                            <mat-label>
+                                PERMIT EXPIRY DATE
+                            </mat-label>
+                            <input 
+                                autocomplete="off"
+                                name="permit_expiry_date" 
+                                [(ngModel)]="signatories_form[i].permit_expiry_date" matInput [matDatepicker]="permit_expiry_date"/>
+                                <mat-datepicker-toggle matSuffix [for]="permit_expiry_date"></mat-datepicker-toggle>
+                                <mat-datepicker #permit_expiry_date></mat-datepicker>
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>BVN</mat-label>
+                            <input autocomplete="off" maxLength="11" type="text" matInput name="bvn" [(ngModel)]="signatories_form[i].bvn">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+
+                        <label>Do you have residency or Citizenship of any other Country:</label>
+                        
+                        <mat-radio-group (change)="dualCitizenship(i)" [(ngModel)]="signatories_form[i].citizenshipstatus" name="citizenshipstatus">
+                            <mat-radio-button style="margin-right: 20px;" *ngFor="let option of dual_citizenship" [value]="option.name">
+                                {{ option.name }}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </span>
+
+                    <ng-container *ngIf="signatories_form[i].citizenshipstatus == 'Yes' ">
+                        <span class="col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label class="text-secondary"> IF YES, WHICH COUNTRY? </mat-label>
+                            <mat-select 
+                                name="countryofResidency"
+                                [(ngModel)]="signatories_form[i].countryofResidency">
+                                <mat-option
+                                    [value]="null"
+                                    disabled
+                                    selected>
+                                        Select
+                                </mat-option>
+                                <mat-option                                
+                                    *ngFor="let info of nationalities" 
+                                    [value]="info.countryName">
+                                        {{info.countryName}}
+                                </mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                        </span>
+    
+                        <span class="col-lg-6 col-md-6 col-sm-12">
+                            <mat-form-field
+                                class="full-width"
+                                appearance="outline">
+                                <mat-label>SOCIAL SECURITY NUMBER</mat-label>
+                                <input autocomplete="off" type="text" matInput name="ssn" [(ngModel)]="signatories_form[i].ssn">
+                            </mat-form-field>
+                        </span>
+                    </ng-container>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>RESIDENTIAL ADDRESS</mat-label>
+                            <input autocomplete="off" type="text" matInput name="last_name" [(ngModel)]="signatories_form[i].residential_address">
+                        </mat-form-field>
+                    </span>
+                    
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                        class="full-width"
+                        appearance="outline">
+                        <mat-label class="text-secondary">RESIDENTIAL ADDRESS STATE</mat-label>
+                        <mat-select 
+                            (selectionChange)="getResidenceLga(signatories_form[i].residential_address_state)"                         
+                            name="residential_address_state"
+                            [(ngModel)]="signatories_form[i].residential_address_state">
+                            <mat-option
+                                [value]="null"
+                                disabled
+                                selected>
+                                    Select
+                            </mat-option>
+                            <mat-option                                
+                                *ngFor="let info of stateResidenceNames" 
+                                [value]="info.stateName">
+                                    {{ info.stateName }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label class="text-secondary">RESIDENTIAL ADDRESS LGA</mat-label>
+                            <mat-select 
+                                name="residential_address_lga"
+                                [(ngModel)]="signatories_form[i].residential_address_lga">
+                                <mat-option
+                                    [value]="null"
+                                    disabled
+                                    selected>
+                                        Select
+                                </mat-option>
+                                <mat-option                                
+                                *ngFor="let info of lgaResidenceList" [value]="info.lgaName">
+                                {{ info.lgaName }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>MAILING ADDRESS</mat-label>
+                            <input autocomplete="off" type="text" matInput name="mailingaddress" [(ngModel)]="signatories_form[i].mailingaddress">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>PHONE NUMBER</mat-label>
+                            <input autocomplete="off" type="text" matInput name="last_name" [(ngModel)]="signatories_form[i].phonenumber">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>ALTERNATIVE PHONE NUMBER</mat-label>
+                            <input autocomplete="off" type="text" matInput name="alt_phonenumber" [(ngModel)]="signatories_form[i].alt_phonenumber">
+                        </mat-form-field>
+                    </span>
+
+                    <span class="col-lg-6 col-md-6 col-sm-12">
+                        <mat-form-field
+                            class="full-width"
+                            appearance="outline">
+                            <mat-label>EMAIL ADDRESS</mat-label>
+                            <input autocomplete="off" type="text" matInput name="email" [(ngModel)]="signatories_form[i].email">
+                        </mat-form-field>
+                    </span>
+
+
+                    <!-- Add more input fields as needed -->
+
+                    <div style="float: left;" class="col-lg-6 col-md-6 col-sm-12">
+                        <button class="btn btn-outline-danger" style="margin-bottom: 20px;" (click)="removeSignatoriesForm(i)"> Remove Signatory - </button>
+                    </div>
+                    <hr/>
+
+                <!-- </span> -->
+                <!-- <button [disabled]="signatories_form.length > 2" class="btn btn-primary" (click)="addSignatoriesForm()">Add Signatory + </button> -->
+                <!-- <div class="col-lg-12 col-md-12 col-sm-12">
+                    
+
+                </div> -->
+
+            </form>
+        </div>
+        <button [disabled]="signatories_form.length > 9" class="btn btn-secondary" (click)="addSignatoriesForm()">Add Signatory + </button>
+                        
+        <!-- End of SIGNATORIES -->
+
+        
+        <div class="mb-3 d-flex align-items-center justify-content-center mt-5 p-5">
+            <button (click)="back()" style="color: white !important"
+                class="btn btn-lg itmb-color col-lg-6 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">Previous</button>
+            <button (click)="next()" style="color: white !important"
+                class="btn btn-lg itmb-color col-lg-6 col-md-6 col-sm-12 mx-3 fs-6 fw-semibold">Next</button>
+        </div>
+
+    </div>
+
+    <div class="right-side col-lg-6 col-md-12 col-sm-12 p-3">
+        <side-image></side-image>
+    </div>
+</div>

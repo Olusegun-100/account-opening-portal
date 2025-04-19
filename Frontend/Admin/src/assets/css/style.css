@@ -1,0 +1,220 @@
+ .img .bank_logo {
+     width: 80px !important;
+     height: 80px !important;
+ }
+
+ .theme-white {
+     background-color: #FFF !important;
+ }
+
+ .left_bar a {
+     color: #FFF !important;
+ }
+
+ .left_bar a:hover {
+     background-color: #FFF !important;
+     color: #25396E !important;
+     font-weight: 700;
+ }
+
+ .left_bar a:active {
+     background-color: #FFF !important;
+     color: #25396E !important;
+     font-weight: 700;
+ }
+
+ .left_bar a:focus {
+     background-color: #FFF !important;
+     color: #25396E !important;
+     font-weight: 700;
+ }
+
+ .left_sidebar {
+     background-color: #2d2d2d !important;
+ }
+
+ .navbar_icon .nav-item a {
+     color: #25396E !important;
+     /* opacity: 0.7 !important; */
+ }
+
+ .main_content .page_bground {
+     background-color: #ededee !important;
+ }
+
+ .panel-default {
+     border-color: #DDD;
+ }
+
+ .panel-default>.panel-heading {
+     color: #333;
+     background-color: #f5f5f5;
+     border-color: #DDD;
+ }
+
+ .panel-heading {
+     padding: 10px 15px;
+     border-bottom: 1px solid transparent;
+     border-top-left-radius: 3px;
+     border-top-right-radius: 3px;
+ }
+
+ .panel-body {
+     padding: 20px;
+     border: 1px solid gainsboro;
+ }
+
+ .btn-itmb {
+     background-color: #25396E;
+     color: #FFF;
+ }
+
+ .btn-itmb:hover {
+     background-color: #25396E;
+     color: #FFF;
+ }
+
+ .nested_tab .nested_tab_link {
+     border-radius: .215rem !important
+ }
+
+ .nested_tab .nested_tab_link.active,
+ .nested_tab .show>.nested_tab_link {
+     color: #25396E !important;
+     border-bottom: 4px solid #25396E !important
+ }
+
+ .approved_class {
+     padding: 1% 3%;
+     width: fit-content;
+     text-align: center;
+     font-weight: 500;
+     font-size: 14px;
+     color: white;
+     border-radius: 4px;
+     background-color: #38bb56;
+ }
+
+ .rejected_class {
+     padding: 1% 3%;
+     width: fit-content;
+     text-align: center;
+     font-weight: 500;
+     font-size: 14px;
+     color: white;
+     border-radius: 4px;
+     background-color: #f75554;
+ }
+
+ .pending_class
+ {
+     padding: 1% 3%;
+     width: fit-content;
+     text-align: center;
+     font-weight: 500;
+     font-size: 14px;
+     color: white;
+     border-radius: 4px;
+     background-color: #ff9101;
+ }
+ 
+ .completed_class {
+     padding: 1% 3%;
+     width: fit-content;
+     text-align: center;
+     font-weight: 500;
+     font-size: 14px;
+     color: white;
+     border-radius: 4px;
+     color: rgb(255, 255, 255);
+     background-color: #288cff;
+ }
+
+
+ .new_update_class {
+     padding: 3% 10%;
+     width: fit-content;
+     text-align: center;
+     font-weight: 500;
+     font-size: 12px;
+     color: white;
+     border-radius: 5px;
+     background-color: #f75554;
+ }
+
+ .menu_toggle a:hover {
+     color: red !important;
+ }
+
+ .bg-success {
+     background-color: #38bb56;
+ }
+
+ .bg-danger {
+     background-color: #f75554;
+ }
+
+ .bg-primary {
+     background-color: #288cff;
+ }
+
+ .bg-warning {
+     background-color: #ffab32;
+ }
+
+ .text-white {
+     color: white !important
+ }
+
+ .container_center {
+     margin: 1% 30%;
+ }
+
+
+ /* Full Screen Modals */
+
+ .modal-full-screen {
+     position: relative;
+     width: auto;
+     margin: .5rem;
+     pointer-events: none
+ }
+
+ .modal.fade .modal-full-screen {
+     transition: transform 0.3s ease-out;
+     transform: translate(0, -25%)
+ }
+
+
+ .modal.show .modal-full-screen {
+     transform: translate(0, 0)
+ }
+
+ .modal-full-screen-centered {
+     display: flex;
+     align-items: center;
+     min-height: calc(100% - (.5rem * 2))
+ }
+
+ .modal-full-screen-centered::before {
+     display: block;
+     height: calc(100vh - (.5rem * 2));
+     content: ""
+ }
+
+ .modal-fluid .modal-full-screen {
+     /* margin-top: 0; */
+     margin-bottom: 1%
+ }
+
+
+ @media (min-width: 992px) {
+     .modal-lg {
+         max-width: 80%;
+         height: 80%;
+     }
+
+     .modal-full-screen {
+         margin: 1.75rem auto
+     }
+ }
